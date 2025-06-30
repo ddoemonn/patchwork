@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { vscDarkPlus, vs } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { useTheme } from 'next-themes';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -45,6 +46,7 @@ export function SnippetCard({
 }: SnippetCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [showLineNumbers, setShowLineNumbers] = useState(true);
+  const { resolvedTheme } = useTheme();
 
   const handleCopy = async () => {
     try {
@@ -165,7 +167,7 @@ export function SnippetCard({
         <div className="relative">
           <SyntaxHighlighter
             language={snippet.language}
-            style={vscDarkPlus}
+            style={resolvedTheme === 'dark' ? vscDarkPlus : vs}
             showLineNumbers={showLineNumbers}
             customStyle={{
               margin: 0,

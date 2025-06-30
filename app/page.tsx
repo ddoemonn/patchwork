@@ -14,6 +14,7 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
 import { toast } from 'sonner';
 import { FileText, Code2 } from 'lucide-react';
 import { loadSampleData } from '@/lib/sample-snippets';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 export default function Home() {
   const [editingSnippet, setEditingSnippet] = useState<Snippet | undefined>(undefined);
@@ -188,17 +189,20 @@ export default function Home() {
               <Code2 className="h-8 w-8 text-primary" />
               <h1 className="text-3xl font-bold">PatchWork</h1>
             </div>
-            <div className="hidden md:flex items-center gap-4 text-sm text-muted-foreground">
-              <div className="flex items-center gap-1">
-                <kbd className="px-2 py-1 bg-muted rounded text-xs">⌘</kbd>
-                <kbd className="px-2 py-1 bg-muted rounded text-xs">N</kbd>
-                <span>New snippet</span>
+            <div className="flex items-center gap-4">
+              <div className="hidden md:flex items-center gap-4 text-sm text-muted-foreground">
+                <div className="flex items-center gap-1">
+                  <kbd className="px-2 py-1 bg-muted rounded text-xs">⌘</kbd>
+                  <kbd className="px-2 py-1 bg-muted rounded text-xs">N</kbd>
+                  <span>New snippet</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <kbd className="px-2 py-1 bg-muted rounded text-xs">⌘</kbd>
+                  <kbd className="px-2 py-1 bg-muted rounded text-xs">K</kbd>
+                  <span>Search</span>
+                </div>
               </div>
-              <div className="flex items-center gap-1">
-                <kbd className="px-2 py-1 bg-muted rounded text-xs">⌘</kbd>
-                <kbd className="px-2 py-1 bg-muted rounded text-xs">K</kbd>
-                <span>Search</span>
-              </div>
+              <ThemeToggle />
             </div>
           </div>
           <p className="text-lg text-muted-foreground">

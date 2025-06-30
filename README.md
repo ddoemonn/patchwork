@@ -2,7 +2,7 @@
 
 A beautiful, offline-first code snippet manager.
 
-![PatchWork Screenshot](/public/image.png)
+![PatchWork Screenshot](/public/demo.png)
 
 ## ✨ Features
 
